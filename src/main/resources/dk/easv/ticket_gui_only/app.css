@@ -1,57 +1,269 @@
-
-
+/* ===== Global ===== */
 .root {
-    -fx-background-color: linear-gradient(to bottom right, #092857, #0b2d60);
+    -fx-font-family: "System";
+    -fx-background-color: #F4F7FB;
 }
 
-.label {
+/* ===== Login Screen ===== */
+.login-root {
+    -fx-background-color: #1F3F8A;
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 18;
+    -fx-padding: 28;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.14), 22, 0.25, 0, 8);
+}
+
+.login-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: 900;
+    -fx-padding: 0 0 10 0;
+}
+
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #1D2433;
+}
+
+/* Big inputs (ONLY when you add styleClass="login-input" in FXML) */
+.login-input {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #D2DAE6;
+    -fx-border-radius: 10;
+    -fx-padding: 14 16 14 16;
+    -fx-font-size: 14px;
+}
+
+.login-input:focused {
+    -fx-border-color: #2A5298;
+    -fx-border-width: 1.5;
+}
+
+/* Buttons */
+.primary-button {
+    -fx-background-color: #FF7A18;
     -fx-text-fill: white;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
+    -fx-font-weight: 900;
+    -fx-background-radius: 14;
+    -fx-padding: 16 18 16 18;
+    -fx-cursor: hand;
 }
 
-.button {
-    -fx-background-color: #bf7d16;
-    -fx-text-fill: white;
-    -fx-background-radius: 8;
-    -fx-padding: 8 18 8 18;
-}
+.primary-button:hover { -fx-background-color: #FF8F3D; }
+.primary-button:pressed { -fx-background-color: #F06908; }
 
-.button:hover {
-    -fx-background-color: #ff9a3c;
-}
-
-.topbar {
-    -fx-background-color: rgba(0,0,0,0.15);
-}
-
-.title {
-    -fx-text-fill: white;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-}
-
-.event-card {
-    -fx-background-color: rgba(255,255,255,0.08);
+.secondary-button {
+    -fx-background-color: #EEF3FB;
+    -fx-text-fill: #1D2433;
+    -fx-font-weight: 800;
     -fx-background-radius: 12;
-    -fx-padding: 12;
+    -fx-padding: 10 14 10 14;
+    -fx-cursor: hand;
+    -fx-border-color: #D2DAE6;
+    -fx-border-radius: 12;
+}
+.secondary-button:hover { -fx-background-color: #E6EDF8; }
+
+.wide { -fx-max-width: Infinity; }
+
+/* ===== Admin Panel ===== */
+.admin-root {
+    -fx-background-color: #F4F7FB;
+}
+
+/* Align sidebar header with topbar */
+.sidebar {
+    -fx-background-color: #1F3F8A;
+    -fx-padding: 14 18 18 18; /* was 22 top */
+}
+
+/* tighten title spacing */
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+    -fx-padding: 2 0 18 0;
+}
+
+
+/* IMPORTANT: style nav buttons ONLY by .nav-button, not ".button.nav-button" */
+
+
+.sidebar .nav-button:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+}
+/* Sidebar nav (ToggleButtons) */
+/* Sidebar nav buttons (ToggleButtons) */
+.sidebar .toggle-button.nav-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 12;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-border-radius: 12;
+
+    -fx-padding: 10 14 10 14;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: Infinity;
+
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-font-size: 14px;
+
+    /* remove the blue focus glow that makes it look “broken” */
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.sidebar .toggle-button.nav-button:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+}
+
+.sidebar .toggle-button.nav-button:pressed {
+    -fx-background-color: rgba(255,255,255,0.18);
+}
+
+/* ONLY indicator of active tab */
+.sidebar .toggle-button.nav-button:selected {
+    -fx-background-color: #FF7A18;
+    -fx-text-fill: white;
+}
+
+
+
+/* Active tab (your FXML uses: "nav-button active") */
+
+
+.sidebar-footer {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-weight: 800;
+}
+
+/* Top bar */
+.topbar {
+    -fx-background-color: white;
+    -fx-border-color: #E3EAF5;
+    -fx-border-width: 0 0 1 0;
+
+    /* match sidebar header height */
+    -fx-padding: 14 18 14 18;
     -fx-alignment: center-left;
 }
 
-.card-title {
-    -fx-text-fill: white;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
+
+.topbar-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
 }
 
-.card-sub {
-    -fx-text-fill: rgba(255,255,255,0.8);
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+
+    /* align with topbar baseline */
+    -fx-padding: 6 0 -2 0;
+}
+
+.pill {
+    -fx-background-color: #EEF3FB;
+    -fx-background-radius: 999;
+    -fx-padding: 8 12 8 12;
+    -fx-font-weight: 800;
+}
+
+/* content host */
+.content-host {
+    -fx-padding: 28;
+}
+
+/* Pages + Cards */
+.page { -fx-padding: 10; }
+
+.page-title {
+    -fx-font-size: 34px;
+    -fx-font-weight: 900;
+}
+
+.page-subtitle {
+    -fx-text-fill: #5B677A;
     -fx-font-size: 13px;
 }
 
-.primary {
-    -fx-background-color: #ff7a18;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
-    -fx-padding: 8 16 8 16;
+.searchbar { -fx-padding: 4 0 8 0; }
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-padding: 16;
+
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 14;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0.2, 0, 6);
+}
+
+
+.card-title { -fx-font-size: 16px; -fx-font-weight: 900; }
+.card-subtext { -fx-text-fill: #5B677A; }
+.muted { -fx-text-fill: #5B677A; }
+
+.tag {
+    -fx-background-radius: 999;
+    -fx-padding: 6 10 6 10;
+    -fx-font-weight: 900;
+}
+
+.tag.coordinator { -fx-background-color: #2D6BFF; -fx-text-fill: white; }
+.tag.user { -fx-background-color: #E9EEF6; -fx-text-fill: #1D2433; }
+
+.mini-card {
+    -fx-background-color: #F7FAFF;
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 12;
+}
+
+.searchbar {
+    -fx-padding: 10 0 12 0;
+}
+
+.search-input {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 12;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 14px;
+}
+
+.search-input:focused {
+    -fx-border-color: #2A5298;
+    -fx-border-width: 1.5;
+}
+
+/* wrapper for the whole top area (blue left + white right) */
+.topbar-wrap {
+    -fx-background-color: white; /* right side base */
+}
+
+/* left block above the sidebar */
+.topbar-left {
+    -fx-background-color: #1F3F8A;
+    -fx-background-insets: 0;
+}
+
+/* your existing topbar (right side) */
+.topbar {
+    -fx-background-color: white;
+    -fx-border-color: #E3EAF5;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-insets: 0;
 }

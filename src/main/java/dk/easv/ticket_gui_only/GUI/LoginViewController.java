@@ -1,32 +1,29 @@
 package dk.easv.ticket_gui_only.GUI;
 
-import javafx.fxml.FXML;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class LoginViewController {
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    private void onHelloButtonClick() throws IOException {
-        Stage stage = (Stage) welcomeText.getScene().getWindow();
+    public void onLoginClicked(ActionEvent event) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/easv/ticket_gui_only/CoordinatorView.fxml"));
-        Scene scene = new Scene(loader.load());
+        Parent adminRoot = FXMLLoader.load(
+                getClass().getResource("/dk/easv/ticket_gui_only/AdminView.fxml")
+        );
 
-        System.out.println("CSS = " + getClass().getResource("/dk/easv/ticket_gui_only/app.css"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        // IMPORTANT: correct CSS path
-        scene.getStylesheets().add(getClass().getResource("/dk.easv.ticket_gui_only/app.css").toExternalForm());
+        Scene scene = stage.getScene();     // reuse existing scene (keeps CSS)
+        scene.setRoot(adminRoot);
 
-        stage.setScene(scene);
+        // admin window size
+        stage.setWidth(1280);
+        stage.setHeight(780);
+        stage.centerOnScreen();
     }
 
-
 }
-
