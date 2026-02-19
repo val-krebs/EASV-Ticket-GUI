@@ -67,7 +67,9 @@
             </top>
 
             <center>
-                <StackPane fx:id="contentHost" styleClass="content-host"/>
+                <StackPane fx:id="contentHost"
+                           styleClass="content-host"
+                           alignment="TOP_LEFT"/>
             </center>
 
         </BorderPane>

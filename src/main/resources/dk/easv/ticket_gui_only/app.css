@@ -218,7 +218,11 @@
     -fx-background-radius: 999;
     -fx-padding: 6 10 6 10;
     -fx-font-weight: 900;
+    /* NEW — aligns and equalizes width like Figma */
+    -fx-alignment: CENTER;
+    -fx-min-width: 110;
 }
+
 
 .tag.coordinator { -fx-background-color: #2D6BFF; -fx-text-fill: white; }
 .tag.user { -fx-background-color: #E9EEF6; -fx-text-fill: #1D2433; }
@@ -266,4 +270,21 @@
     -fx-border-color: #E3EAF5;
     -fx-border-width: 0 0 1 0;
     -fx-background-insets: 0;
+}
+/* Row layout inside the card */
+.user-row {
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Optional: admin tag like figma (red pill) */
+.tag.admin {
+    -fx-background-color: #D11A2A;
+    -fx-text-fill: white;
+}
+
+/* smaller action buttons in user rows */
+.action-small {
+    -fx-padding: 10 18 10 18;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
 }

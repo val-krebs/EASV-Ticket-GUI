@@ -1,44 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      spacing="14" styleClass="page">
+<VBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="14"
+      fillWidth="true"
+      styleClass="page">
 
     <Label text="User Management" styleClass="page-title"/>
-    <Label text="Admins manage users and coordinator access. Admins cannot create events." styleClass="page-subtitle"/>
+    <Label text="Admins manage users and coordinator access. Admins cannot create events."
+           styleClass="page-subtitle"/>
 
-    <HBox spacing="10" styleClass="searchbar">
-        <TextField promptText="Search users..." styleClass="search-input" HBox.hgrow="ALWAYS"/>
+    <HBox styleClass="searchbar">
+        <TextField promptText="Search users..."
+                   styleClass="search-input"
+                   HBox.hgrow="ALWAYS"/>
     </HBox>
 
+    <!-- ROW 1 -->
+    <HBox styleClass="card user-row" maxWidth="Infinity" spacing="16">
+        <VBox spacing="4">
+            <Label text="Sarah Johnson" styleClass="card-title"/>
+            <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
+        </VBox>
 
-    <VBox spacing="12">
-        <HBox styleClass="card">
-            <VBox spacing="4">
-                <Label text="Sarah Johnson" styleClass="card-title"/>
-                <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
-            </VBox>
-            <HBox HBox.hgrow="ALWAYS"/>
-            <Label text="Coordinator" styleClass="tag coordinator"/>
-            <HBox HBox.hgrow="ALWAYS"/>
-            <Label text="3 events" styleClass="muted"/>
-        </HBox>
+        <Region HBox.hgrow="ALWAYS"/>
 
-        <HBox styleClass="card">
-            <VBox spacing="4">
-                <Label text="Michael Chen" styleClass="card-title"/>
-                <Label text="michael.chen@easv.dk" styleClass="card-subtext"/>
-            </VBox>
-            <HBox HBox.hgrow="ALWAYS"/>
-            <Label text="User" styleClass="tag user"/>
-            <HBox HBox.hgrow="ALWAYS"/>
-            <Label text="0 events" styleClass="muted"/>
-        </HBox>
-    </VBox>
+        <Label text="Coordinator" styleClass="tag coordinator"/>
+        <Label text="3 events" styleClass="muted" minWidth="80"/>
+
+        <Button text="Remove Coordinator" styleClass="secondary-button action-small"/>
+    </HBox>
+
+    <!-- ROW 2 -->
+    <HBox styleClass="card user-row" maxWidth="Infinity" spacing="16">
+        <VBox spacing="4">
+            <Label text="Michael Chen" styleClass="card-title"/>
+            <Label text="michael.chen@easv.dk" styleClass="card-subtext"/>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label text="User" styleClass="tag user"/>
+        <Label text="0 events" styleClass="muted" minWidth="80"/>
+
+        <Button text="Assign Coordinator" styleClass="primary-button action-small"/>
+    </HBox>
+
+    <!-- ROW 3 -->
+    <HBox styleClass="card user-row" maxWidth="Infinity" spacing="16">
+        <VBox spacing="4">
+            <Label text="Anna Larsen" styleClass="card-title"/>
+            <Label text="anna.larsen@easv.dk" styleClass="card-subtext"/>
+        </VBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label text="Admin" styleClass="tag admin"/>
+        <Label text="0 events" styleClass="muted" minWidth="80"/>
+
+        <Label text="No actions" styleClass="muted"/>
+    </HBox>
 
 </VBox>
