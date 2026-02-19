@@ -1,71 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
 
 <VBox xmlns="http://javafx.com/javafx/25"
       xmlns:fx="http://javafx.com/fxml/1"
       spacing="14"
-      fillWidth="true"
       styleClass="page">
 
+    <!-- DEBUG (keep for now, remove later) -->
     <Label text="User Management" styleClass="page-title"/>
+
     <Label text="Admins manage users and coordinator access. Admins cannot create events."
            styleClass="page-subtitle"/>
 
-    <HBox styleClass="searchbar">
-        <TextField promptText="Search users..."
-                   styleClass="search-input"
-                   HBox.hgrow="ALWAYS"/>
+    <!-- Search -->
+    <HBox spacing="10" styleClass="searchbar">
+        <Label text="🔍" styleClass="muted"/>
+        <TextField promptText="Search users..." prefWidth="520" styleClass="search-input"/>
     </HBox>
 
-    <!-- ROW 1 -->
-    <HBox styleClass="card user-row" maxWidth="Infinity" spacing="16">
-        <VBox spacing="4">
-            <Label text="Sarah Johnson" styleClass="card-title"/>
-            <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
-        </VBox>
+    <!-- SCROLL ONLY THE LIST -->
+    <ScrollPane fitToWidth="true"
+                hbarPolicy="NEVER"
+                vbarPolicy="AS_NEEDED"
+                styleClass="users-scroll">
 
-        <Region HBox.hgrow="ALWAYS"/>
+        <content>
+            <VBox spacing="18" styleClass="users-list">
+                <padding>
+                    <Insets top="2" right="8" bottom="18" left="2"/>
+                </padding>
 
-        <Label text="Coordinator" styleClass="tag coordinator"/>
-        <Label text="3 events" styleClass="muted" minWidth="80"/>
+                <!-- ROW 1 -->
+                <HBox spacing="16" styleClass="card user-row">
+                    <VBox spacing="4">
+                        <Label text="Sarah Johnson" styleClass="card-title"/>
+                        <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
+                    </VBox>
 
-        <Button text="Remove Coordinator" styleClass="secondary-button action-small"/>
-    </HBox>
+                    <Region HBox.hgrow="ALWAYS"/>
 
-    <!-- ROW 2 -->
-    <HBox styleClass="card user-row" maxWidth="Infinity" spacing="16">
-        <VBox spacing="4">
-            <Label text="Michael Chen" styleClass="card-title"/>
-            <Label text="michael.chen@easv.dk" styleClass="card-subtext"/>
-        </VBox>
+                    <Label text="Coordinator">
+                        <styleClass>
+                            <String fx:value="tag"/>
+                            <String fx:value="coordinator"/>
+                        </styleClass>
+                    </Label>
 
-        <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="3 events" styleClass="muted" minWidth="80"/>
 
-        <Label text="User" styleClass="tag user"/>
-        <Label text="0 events" styleClass="muted" minWidth="80"/>
+                    <Button text="Remove Coordinator" styleClass="secondary-button"/>
+                </HBox>
 
-        <Button text="Assign Coordinator" styleClass="primary-button action-small"/>
-    </HBox>
+                <!-- ROW 2 -->
+                <HBox spacing="16" styleClass="card user-row">
+                    <VBox spacing="4">
+                        <Label text="Michael Chen" styleClass="card-title"/>
+                        <Label text="michael.chen@easv.dk" styleClass="card-subtext"/>
+                    </VBox>
 
-    <!-- ROW 3 -->
-    <HBox styleClass="card user-row" maxWidth="Infinity" spacing="16">
-        <VBox spacing="4">
-            <Label text="Anna Larsen" styleClass="card-title"/>
-            <Label text="anna.larsen@easv.dk" styleClass="card-subtext"/>
-        </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
 
-        <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="User">
+                        <styleClass>
+                            <String fx:value="tag"/>
+                            <String fx:value="user"/>
+                        </styleClass>
+                    </Label>
 
-        <Label text="Admin" styleClass="tag admin"/>
-        <Label text="0 events" styleClass="muted" minWidth="80"/>
+                    <Label text="0 events" styleClass="muted" minWidth="80"/>
 
-        <Label text="No actions" styleClass="muted"/>
-    </HBox>
+                    <Button text="Assign Coordinator" styleClass="primary-button"/>
+                </HBox>
+
+                <!-- ROW 3 -->
+                <HBox spacing="16" styleClass="card user-row">
+                    <VBox spacing="4">
+                        <Label text="Emma Nielsen" styleClass="card-title"/>
+                        <Label text="emma.nielsen@easv.dk" styleClass="card-subtext"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Coordinator">
+                        <styleClass>
+                            <String fx:value="tag"/>
+                            <String fx:value="coordinator"/>
+                        </styleClass>
+                    </Label>
+
+                    <Label text="5 events" styleClass="muted" minWidth="80"/>
+
+                    <Button text="Remove Coordinator" styleClass="secondary-button"/>
+                </HBox>
+
+                <!-- ROW 4 -->
+                <HBox spacing="16" styleClass="card user-row">
+                    <VBox spacing="4">
+                        <Label text="David Schmidt" styleClass="card-title"/>
+                        <Label text="david.schmidt@easv.dk" styleClass="card-subtext"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Label text="User">
+                        <styleClass>
+                            <String fx:value="tag"/>
+                            <String fx:value="user"/>
+                        </styleClass>
+                    </Label>
+
+                    <Label text="0 events" styleClass="muted" minWidth="80"/>
+
+                    <Button text="Assign Coordinator" styleClass="primary-button"/>
+                </HBox>
+
+                <!-- ROW 5 -->
+                <HBox spacing="16" styleClass="card user-row">
+                    <VBox spacing="4">
+                        <Label text="Anna Larsen" styleClass="card-title"/>
+                        <Label text="anna.larsen@easv.dk" styleClass="card-subtext"/>
+                    </VBox>
+
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Admin">
+                        <styleClass>
+                            <String fx:value="tag"/>
+                            <String fx:value="admin"/>
+                        </styleClass>
+                    </Label>
+
+                    <Label text="0 events" styleClass="muted" minWidth="80"/>
+                    <Label text="No actions" styleClass="muted"/>
+                </HBox>
+
+                <!-- EXTRA rows so you can see the scrollbar clearly (optional) -->
+                <HBox spacing="16" styleClass="card user-row">
+                    <VBox spacing="4">
+                        <Label text="Thomas Andersen" styleClass="card-title"/>
+                        <Label text="thomas.andersen@easv.dk" styleClass="card-subtext"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="User">
+                        <styleClass>
+                            <String fx:value="tag"/>
+                            <String fx:value="user"/>
+                        </styleClass>
+                    </Label>
+                    <Label text="0 events" styleClass="muted" minWidth="80"/>
+                    <Button text="Assign Coordinator" styleClass="primary-button"/>
+                </HBox>
+
+            </VBox>
+        </content>
+    </ScrollPane>
 
 </VBox>

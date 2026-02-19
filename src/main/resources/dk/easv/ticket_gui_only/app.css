@@ -71,10 +71,9 @@
 .wide { -fx-max-width: Infinity; }
 
 /* ===== Admin Panel ===== */
-.admin-root {
+.admin-root, .root {
     -fx-background-color: #F4F7FB;
 }
-
 /* Align sidebar header with topbar */
 .sidebar {
     -fx-background-color: #1F3F8A;
@@ -184,12 +183,17 @@
 }
 
 /* Pages + Cards */
-.page { -fx-padding: 10; }
+.page {
+    -fx-padding: 10;
+    -fx-background-color: #F4F7FB;
+}
 
 .page-title {
     -fx-font-size: 34px;
     -fx-font-weight: 900;
+    -fx-text-fill: #1D2433;
 }
+
 
 .page-subtitle {
     -fx-text-fill: #5B677A;
@@ -200,14 +204,15 @@
 
 .card {
     -fx-background-color: white;
-    -fx-background-radius: 14;
-    -fx-padding: 16;
+    -fx-background-radius: 16;
+    -fx-padding: 18;
 
     -fx-border-color: #E3EAF5;
-    -fx-border-radius: 14;
+    -fx-border-radius: 16;
 
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0.2, 0, 6);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 18, 0.18, 0, 6);
 }
+
 
 
 .card-title { -fx-font-size: 16px; -fx-font-weight: 900; }
@@ -216,12 +221,24 @@
 
 .tag {
     -fx-background-radius: 999;
-    -fx-padding: 6 10 6 10;
+
+    /* padding same visual weight as Figma */
+    -fx-padding: 6 12 6 12;
+
     -fx-font-weight: 900;
-    /* NEW — aligns and equalizes width like Figma */
+    -fx-font-size: 12px;
+
+    /* center text inside pill */
     -fx-alignment: CENTER;
-    -fx-min-width: 110;
+
+    /* IMPORTANT — remove fixed width behavior */
+    -fx-min-width: USE_PREF_SIZE;
+    -fx-max-width: USE_PREF_SIZE;
+
+    /* prevents weird JavaFX stretching */
+    -fx-background-insets: 0;
 }
+
 
 
 .tag.coordinator { -fx-background-color: #2D6BFF; -fx-text-fill: white; }
@@ -288,3 +305,58 @@
     -fx-background-radius: 12;
     -fx-border-radius: 12;
 }
+
+/* Scroll area background */
+.users-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-background: transparent;
+}
+
+/* Remove ugly gray frame */
+.users-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Figma thin scrollbar */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #C9D3E3;
+    -fx-background-radius: 999;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #AEBBD0;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-padding: 0;
+    -fx-opacity: 0;
+}
+/* ===== Users scroll (fix "washed out/broken" colors) ===== */
+.users-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.users-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* optional: make scroll bar look cleaner */
+.users-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+.users-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.users-list {
+    -fx-background-color: transparent;
+}
+

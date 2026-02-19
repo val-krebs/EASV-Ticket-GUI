@@ -69,7 +69,7 @@
             <center>
                 <StackPane fx:id="contentHost"
                            styleClass="content-host"
-                           alignment="TOP_LEFT"/>
+                           BorderPane.alignment="CENTER"/>
             </center>
 
         </BorderPane>
