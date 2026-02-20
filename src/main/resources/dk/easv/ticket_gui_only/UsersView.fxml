@@ -23,7 +23,7 @@
 
     <!-- Search -->
     <HBox spacing="10" styleClass="searchbar">
-        <Label text="🔍" styleClass="muted"/>
+
         <TextField promptText="Search users..." prefWidth="520" styleClass="search-input"/>
     </HBox>
 
