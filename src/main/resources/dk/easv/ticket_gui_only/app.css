@@ -9,9 +9,7 @@
 /* =========================
    Login Screen
 ========================= */
-.login-root {
-    -fx-background-color: #1F3F8A;
-}
+.login-root { -fx-background-color: #1F3F8A; }
 
 .login-card {
     -fx-background-color: white;
@@ -72,14 +70,10 @@
 }
 .secondary-button:hover { -fx-background-color: #E6EDF8; }
 
-.wide { -fx-max-width: Infinity; }
-
 /* =========================
    Admin Panel Layout
 ========================= */
-.admin-root {
-    -fx-background-color: #F4F7FB;
-}
+.admin-root { -fx-background-color: #F4F7FB; }
 
 .sidebar {
     -fx-background-color: #1F3F8A;
@@ -90,7 +84,6 @@
     -fx-text-fill: white;
     -fx-font-size: 22px;
     -fx-font-weight: 900;
-    /* your working alignment */
     -fx-padding: 6 0 -2 0;
 }
 
@@ -99,35 +92,24 @@
     -fx-font-weight: 800;
 }
 
-/* Sidebar nav buttons */
 .sidebar .toggle-button.nav-button {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
     -fx-background-radius: 12;
-
     -fx-border-color: transparent;
     -fx-border-width: 0;
-
     -fx-padding: 10 14 10 14;
     -fx-alignment: CENTER_LEFT;
     -fx-max-width: Infinity;
-
     -fx-text-fill: white;
     -fx-font-weight: 800;
     -fx-font-size: 14px;
-
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
-.sidebar .toggle-button.nav-button:hover {
-    -fx-background-color: rgba(255,255,255,0.12);
-}
-
-.sidebar .toggle-button.nav-button:selected {
-    -fx-background-color: #FF7A18;
-    -fx-text-fill: white;
-}
+.sidebar .toggle-button.nav-button:hover { -fx-background-color: rgba(255,255,255,0.12); }
+.sidebar .toggle-button.nav-button:selected { -fx-background-color: #FF7A18; }
 
 /* Topbar */
 .topbar {
@@ -138,10 +120,7 @@
     -fx-alignment: center-left;
 }
 
-.topbar-title {
-    -fx-font-size: 16px;
-    -fx-font-weight: 900;
-}
+.topbar-title { -fx-font-size: 16px; -fx-font-weight: 900; }
 
 .pill {
     -fx-background-color: #EEF3FB;
@@ -150,13 +129,10 @@
     -fx-font-weight: 800;
 }
 
-/* Content host padding (page margin) */
-.content-host {
-    -fx-padding: 28;
-}
+.content-host { -fx-padding: 28; }
 
 /* =========================
-   Pages (Users etc.)
+   Pages
 ========================= */
 .page {
     -fx-padding: 10;
@@ -193,22 +169,21 @@
 }
 
 /* =========================
-   Cards (User rows)
+   Cards
 ========================= */
 .card {
     -fx-background-color: white;
     -fx-background-radius: 14;
-
     -fx-border-color: #E3EAF5;
     -fx-border-radius: 14;
-
     -fx-padding: 18 18 18 18;
-
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0.2, 0, 6);
 }
 
-.user-row {
+.user-row-grid {
+    -fx-hgap: 18;
     -fx-alignment: CENTER_LEFT;
+    -fx-min-height: 84;
 }
 
 .card-title {
@@ -217,35 +192,28 @@
     -fx-font-weight: 900;
 }
 
-.card-subtext {
-    -fx-text-fill: #5B677A;
-}
+.card-subtext { -fx-text-fill: #5B677A; }
 
-/* Make action buttons match Figma sizing inside user cards */
-.user-row .primary-button {
+/* Button sizing inside cards */
+.card .primary-button {
     -fx-padding: 10 18 10 18;
     -fx-background-radius: 12;
 }
-.user-row .secondary-button {
+.card .secondary-button {
     -fx-padding: 10 18 10 18;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
 }
 
 /* =========================
-   Tags (Coordinator/User/Admin pills)
+   Tags
 ========================= */
 .tag {
     -fx-background-radius: 999;
     -fx-padding: 6 12 6 12;
-
     -fx-font-weight: 900;
     -fx-font-size: 12px;
-
     -fx-alignment: CENTER;
-
-    /* IMPORTANT: no fixed width */
-    -fx-background-insets: 0;
 }
 
 .tag.coordinator { -fx-background-color: #2D6BFF; -fx-text-fill: white; }
@@ -253,7 +221,7 @@
 .tag.admin       { -fx-background-color: #D11A2A; -fx-text-fill: white; }
 
 /* =========================
-   Users ScrollPane (fix grey/white overlay)
+   Users ScrollPane
 ========================= */
 .users-scroll {
     -fx-background-color: transparent;
@@ -261,33 +229,19 @@
     -fx-padding: 0;
 }
 
-.users-scroll > .viewport {
-    -fx-background-color: transparent;
-}
+.users-scroll > .viewport { -fx-background-color: transparent; }
+.users-list { -fx-background-color: transparent; }
 
-/* VBox inside ScrollPane */
-.users-list {
-    -fx-background-color: transparent;
-}
-
-/* Scrollbar (thin like Figma) */
 .users-scroll .scroll-bar:vertical {
     -fx-background-color: transparent;
     -fx-pref-width: 10;
 }
-
-.users-scroll .scroll-bar:vertical .track {
-    -fx-background-color: transparent;
-}
-
+.users-scroll .scroll-bar:vertical .track { -fx-background-color: transparent; }
 .users-scroll .scroll-bar:vertical .thumb {
     -fx-background-color: #C9D3E3;
     -fx-background-radius: 999;
 }
-
-.users-scroll .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #AEBBD0;
-}
+.users-scroll .scroll-bar:vertical .thumb:hover { -fx-background-color: #AEBBD0; }
 
 .users-scroll .scroll-bar .increment-button,
 .users-scroll .scroll-bar .decrement-button {

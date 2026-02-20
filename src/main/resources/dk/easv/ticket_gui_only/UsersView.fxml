@@ -5,8 +5,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import java.lang.String?>
 
@@ -39,154 +40,196 @@
                 </padding>
 
                 <!-- ROW 1 -->
-                <HBox spacing="16">
+                <GridPane>
                     <styleClass>
                         <String fx:value="card"/>
-                        <String fx:value="user-row"/>
+                        <String fx:value="user-row-grid"/>
                     </styleClass>
 
-                    <VBox spacing="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10"/>
+                        <ColumnConstraints prefWidth="170" halignment="CENTER"/>
+                        <ColumnConstraints prefWidth="90" halignment="LEFT"/>
+                        <ColumnConstraints prefWidth="210" halignment="RIGHT"/>
+                    </columnConstraints>
+
+                    <VBox spacing="2" GridPane.columnIndex="0" GridPane.valignment="CENTER">
                         <Label text="Sarah Johnson" styleClass="card-title"/>
                         <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
                     </VBox>
 
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Label text="Coordinator">
+                    <Label text="Coordinator" GridPane.columnIndex="1" GridPane.valignment="CENTER">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="coordinator"/>
                         </styleClass>
                     </Label>
 
-                    <Label text="3 events" styleClass="muted" minWidth="80"/>
-                    <Button text="Remove Coordinator" styleClass="secondary-button"/>
-                </HBox>
+                    <Label text="3 events" styleClass="muted" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+
+                    <Button text="Remove Coordinator" styleClass="secondary-button"
+                            GridPane.columnIndex="3" GridPane.valignment="CENTER"/>
+                </GridPane>
 
                 <!-- ROW 2 -->
-                <HBox spacing="16">
+                <GridPane>
                     <styleClass>
                         <String fx:value="card"/>
-                        <String fx:value="user-row"/>
+                        <String fx:value="user-row-grid"/>
                     </styleClass>
 
-                    <VBox spacing="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10"/>
+                        <ColumnConstraints prefWidth="170" halignment="CENTER"/>
+                        <ColumnConstraints prefWidth="90" halignment="LEFT"/>
+                        <ColumnConstraints prefWidth="210" halignment="RIGHT"/>
+                    </columnConstraints>
+
+                    <VBox spacing="2" GridPane.columnIndex="0" GridPane.valignment="CENTER">
                         <Label text="Michael Chen" styleClass="card-title"/>
                         <Label text="michael.chen@easv.dk" styleClass="card-subtext"/>
                     </VBox>
 
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Label text="User">
+                    <Label text="User" GridPane.columnIndex="1" GridPane.valignment="CENTER">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="user"/>
                         </styleClass>
                     </Label>
 
-                    <Label text="0 events" styleClass="muted" minWidth="80"/>
-                    <Button text="Assign Coordinator" styleClass="primary-button"/>
-                </HBox>
+                    <Label text="0 events" styleClass="muted" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+
+                    <Button text="Assign Coordinator" styleClass="primary-button"
+                            GridPane.columnIndex="3" GridPane.valignment="CENTER"/>
+                </GridPane>
 
                 <!-- ROW 3 -->
-                <HBox spacing="16">
+                <GridPane>
                     <styleClass>
                         <String fx:value="card"/>
-                        <String fx:value="user-row"/>
+                        <String fx:value="user-row-grid"/>
                     </styleClass>
 
-                    <VBox spacing="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10"/>
+                        <ColumnConstraints prefWidth="170" halignment="CENTER"/>
+                        <ColumnConstraints prefWidth="90" halignment="LEFT"/>
+                        <ColumnConstraints prefWidth="210" halignment="RIGHT"/>
+                    </columnConstraints>
+
+                    <VBox spacing="2" GridPane.columnIndex="0" GridPane.valignment="CENTER">
                         <Label text="Emma Nielsen" styleClass="card-title"/>
                         <Label text="emma.nielsen@easv.dk" styleClass="card-subtext"/>
                     </VBox>
 
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Label text="Coordinator">
+                    <Label text="Coordinator" GridPane.columnIndex="1" GridPane.valignment="CENTER">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="coordinator"/>
                         </styleClass>
                     </Label>
 
-                    <Label text="5 events" styleClass="muted" minWidth="80"/>
-                    <Button text="Remove Coordinator" styleClass="secondary-button"/>
-                </HBox>
+                    <Label text="5 events" styleClass="muted" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+
+                    <Button text="Remove Coordinator" styleClass="secondary-button"
+                            GridPane.columnIndex="3" GridPane.valignment="CENTER"/>
+                </GridPane>
 
                 <!-- ROW 4 -->
-                <HBox spacing="16">
+                <GridPane>
                     <styleClass>
                         <String fx:value="card"/>
-                        <String fx:value="user-row"/>
+                        <String fx:value="user-row-grid"/>
                     </styleClass>
 
-                    <VBox spacing="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10"/>
+                        <ColumnConstraints prefWidth="170" halignment="CENTER"/>
+                        <ColumnConstraints prefWidth="90" halignment="LEFT"/>
+                        <ColumnConstraints prefWidth="210" halignment="RIGHT"/>
+                    </columnConstraints>
+
+                    <VBox spacing="2" GridPane.columnIndex="0" GridPane.valignment="CENTER">
                         <Label text="David Schmidt" styleClass="card-title"/>
                         <Label text="david.schmidt@easv.dk" styleClass="card-subtext"/>
                     </VBox>
 
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Label text="User">
+                    <Label text="User" GridPane.columnIndex="1" GridPane.valignment="CENTER">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="user"/>
                         </styleClass>
                     </Label>
 
-                    <Label text="0 events" styleClass="muted" minWidth="80"/>
-                    <Button text="Assign Coordinator" styleClass="primary-button"/>
-                </HBox>
+                    <Label text="0 events" styleClass="muted" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+
+                    <Button text="Assign Coordinator" styleClass="primary-button"
+                            GridPane.columnIndex="3" GridPane.valignment="CENTER"/>
+                </GridPane>
 
                 <!-- ROW 5 -->
-                <HBox spacing="16">
+                <GridPane>
                     <styleClass>
                         <String fx:value="card"/>
-                        <String fx:value="user-row"/>
+                        <String fx:value="user-row-grid"/>
                     </styleClass>
 
-                    <VBox spacing="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10"/>
+                        <ColumnConstraints prefWidth="170" halignment="CENTER"/>
+                        <ColumnConstraints prefWidth="90" halignment="LEFT"/>
+                        <ColumnConstraints prefWidth="210" halignment="RIGHT"/>
+                    </columnConstraints>
+
+                    <VBox spacing="2" GridPane.columnIndex="0" GridPane.valignment="CENTER">
                         <Label text="Anna Larsen" styleClass="card-title"/>
                         <Label text="anna.larsen@easv.dk" styleClass="card-subtext"/>
                     </VBox>
 
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Label text="Admin">
+                    <Label text="Admin" GridPane.columnIndex="1" GridPane.valignment="CENTER">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="admin"/>
                         </styleClass>
                     </Label>
 
-                    <Label text="0 events" styleClass="muted" minWidth="80"/>
-                    <Label text="No actions" styleClass="muted"/>
-                </HBox>
+                    <Label text="0 events" styleClass="muted" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+
+                    <Label text="No actions" styleClass="muted"
+                           GridPane.columnIndex="3" GridPane.valignment="CENTER"/>
+                </GridPane>
 
                 <!-- ROW 6 -->
-                <HBox spacing="16">
+                <GridPane>
                     <styleClass>
                         <String fx:value="card"/>
-                        <String fx:value="user-row"/>
+                        <String fx:value="user-row-grid"/>
                     </styleClass>
 
-                    <VBox spacing="4">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10"/>
+                        <ColumnConstraints prefWidth="170" halignment="CENTER"/>
+                        <ColumnConstraints prefWidth="90" halignment="LEFT"/>
+                        <ColumnConstraints prefWidth="210" halignment="RIGHT"/>
+                    </columnConstraints>
+
+                    <VBox spacing="2" GridPane.columnIndex="0" GridPane.valignment="CENTER">
                         <Label text="Thomas Andersen" styleClass="card-title"/>
                         <Label text="thomas.andersen@easv.dk" styleClass="card-subtext"/>
                     </VBox>
 
-                    <Region HBox.hgrow="ALWAYS"/>
-
-                    <Label text="User">
+                    <Label text="User" GridPane.columnIndex="1" GridPane.valignment="CENTER">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="user"/>
                         </styleClass>
                     </Label>
 
-                    <Label text="0 events" styleClass="muted" minWidth="80"/>
-                    <Button text="Assign Coordinator" styleClass="primary-button"/>
-                </HBox>
+                    <Label text="0 events" styleClass="muted" GridPane.columnIndex="2" GridPane.valignment="CENTER"/>
+
+                    <Button text="Assign Coordinator" styleClass="primary-button"
+                            GridPane.columnIndex="3" GridPane.valignment="CENTER"/>
+                </GridPane>
 
             </VBox>
         </content>
