@@ -9,7 +9,9 @@
 /* =========================
    Login Screen
 ========================= */
-.login-root { -fx-background-color: #1F3F8A; }
+.login-root {
+    -fx-background-color: #1F3F8A;
+}
 
 .login-card {
     -fx-background-color: white;
@@ -44,8 +46,37 @@
     -fx-border-width: 1.5;
 }
 
+/* Login button (guaranteed styling) */
+.login-button {
+    -fx-background-color: #FF7A18;
+    -fx-background-insets: 0;
+    -fx-background-radius: 12;
+
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+
+    /* match textfield height */
+    -fx-pref-height: 46;
+    -fx-min-height: 46;
+
+    /* full width */
+    -fx-max-width: Infinity;
+
+    -fx-cursor: hand;
+
+    /* remove focus ring */
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.login-button:hover { -fx-background-color: #FF8F3D; }
+.login-button:pressed { -fx-background-color: #F06908; }
+
 /* =========================
-   Buttons
+   Buttons (global)
 ========================= */
 .primary-button {
     -fx-background-color: #FF7A18;
@@ -69,6 +100,8 @@
     -fx-border-radius: 12;
 }
 .secondary-button:hover { -fx-background-color: #E6EDF8; }
+
+.wide { -fx-max-width: Infinity; }
 
 /* =========================
    Admin Panel Layout
@@ -152,22 +185,6 @@
 
 .muted { -fx-text-fill: #5B677A; }
 
-.searchbar { -fx-padding: 10 0 12 0; }
-
-.search-input {
-    -fx-background-color: white;
-    -fx-background-radius: 12;
-    -fx-border-color: #E3EAF5;
-    -fx-border-radius: 12;
-    -fx-padding: 12 14 12 14;
-    -fx-font-size: 14px;
-}
-
-.search-input:focused {
-    -fx-border-color: #2A5298;
-    -fx-border-width: 1.5;
-}
-
 /* =========================
    Cards
 ========================= */
@@ -180,12 +197,6 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0.2, 0, 6);
 }
 
-.user-row-grid {
-    -fx-hgap: 18;
-    -fx-alignment: CENTER_LEFT;
-    -fx-min-height: 84;
-}
-
 .card-title {
     -fx-text-fill: #1D2433;
     -fx-font-size: 16px;
@@ -194,15 +205,77 @@
 
 .card-subtext { -fx-text-fill: #5B677A; }
 
-/* Button sizing inside cards */
-.card .primary-button {
-    -fx-padding: 10 18 10 18;
-    -fx-background-radius: 12;
+/* =========================
+   Assign Coordinators (Figma-like)
+========================= */
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #1D2433;
 }
-.card .secondary-button {
+
+/* Smaller shadow for the small coordinator cards */
+.coordinator-card {
+    -fx-padding: 16 16 16 16;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 14, 0.18, 0, 6);
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Make Edit look consistent */
+.edit-button {
     -fx-padding: 10 18 10 18;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
+}
+
+/* Right panel card (big form) */
+.assign-form {
+    -fx-min-height: 640;
+}
+
+/* Form buttons sizing */
+.assign-form .form-primary {
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 12;
+}
+.assign-form .form-secondary {
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+
+/* =========================
+   Assign Coordinators (Figma-like)
+========================= */
+.mini-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12;
+
+    -fx-border-color: #E3EAF5;
+    -fx-border-radius: 12;
+
+    -fx-padding: 14 14 14 14;
+}
+
+.mini-edit {
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+/* right panel sizing feel */
+.assign-form {
+    -fx-min-height: 620; /* gives that tall Figma card feel */
+}
+
+/* buttons inside form should look a bit smaller like figma */
+.small-primary {
+    -fx-padding: 10 18 10 18;
+    -fx-background-radius: 12;
 }
 
 /* =========================

@@ -1,53 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<HBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-      spacing="18" styleClass="page">
+<HBox xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="28"
+      styleClass="page">
 
+    <!-- LEFT COLUMN -->
     <VBox spacing="14" HBox.hgrow="ALWAYS">
         <Label text="Assign Coordinators" styleClass="page-title"/>
-        <Label text="Select a user and assign coordinator access to events." styleClass="page-subtitle"/>
+        <Label text="Select a user and assign coordinator access to events."
+               styleClass="page-subtitle"/>
 
-        <VBox spacing="12" styleClass="card">
-            <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
-            <Label text="Current Coordinators" styleClass="section-title"/>
+        <Label text="Current Coordinators" styleClass="section-title"/>
+        <VBox spacing="14">
 
-            <VBox spacing="10">
-                <HBox styleClass="mini-card">
-                    <VBox spacing="4">
-                        <Label text="Sarah Johnson" styleClass="card-title"/>
-                        <Label text="Assigned to: Tech Conference 2026, Music Festival" styleClass="card-subtext"/>
-                    </VBox>
-                    <HBox HBox.hgrow="ALWAYS"/>
-                    <Button text="Edit" styleClass="secondary-button"/>
-                </HBox>
+            <!-- Coordinator card 1 -->
+            <HBox spacing="14" styleClass="card coordinator-card">
+                <VBox spacing="4">
+                    <Label text="Sarah Johnson" styleClass="card-title"/>
+                    <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
+                    <Label text="Assigned to: Tech Conference 2026, Music Festival"
+                           styleClass="card-subtext"/>
+                </VBox>
 
-                <HBox styleClass="mini-card">
-                    <VBox spacing="4">
-                        <Label text="Emma Nielsen" styleClass="card-title"/>
-                        <Label text="Assigned to: Art Exhibition Opening" styleClass="card-subtext"/>
-                    </VBox>
-                    <HBox HBox.hgrow="ALWAYS"/>
-                    <Button text="Edit" styleClass="secondary-button"/>
-                </HBox>
-            </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="Edit" styleClass="secondary-button edit-button"/>
+            </HBox>
+
+            <!-- Coordinator card 2 -->
+            <HBox spacing="14" styleClass="card coordinator-card">
+                <VBox spacing="4">
+                    <Label text="Emma Nielsen" styleClass="card-title"/>
+                    <Label text="emma.nielsen@easv.dk" styleClass="card-subtext"/>
+                    <Label text="Assigned to: Art Exhibition Opening"
+                           styleClass="card-subtext"/>
+                </VBox>
+
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <Button text="Edit" styleClass="secondary-button edit-button"/>
+            </HBox>
+
         </VBox>
     </VBox>
 
-    <VBox spacing="14" prefWidth="420" styleClass="card">
-        <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+    <!-- RIGHT COLUMN (FORM CARD) -->
+    <VBox spacing="14"
+          prefWidth="520"
+          minWidth="520"
+          styleClass="card assign-form">
+
         <Label text="Assign New Coordinator" styleClass="section-title"/>
         <Label text="(Mock-up form area)" styleClass="muted"/>
 
-        <HBox spacing="10">
-            <Button text="Save" styleClass="primary-button"/>
-            <Button text="Cancel" styleClass="secondary-button"/>
+        <!-- form content placeholder -->
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <!-- bottom actions like Figma -->
+        <HBox spacing="12">
+            <Button text="Save" styleClass="primary-button form-primary"/>
+            <Button text="Cancel" styleClass="secondary-button form-secondary"/>
         </HBox>
+
+        <padding>
+            <Insets top="18" right="18" bottom="18" left="18"/>
+        </padding>
     </VBox>
 
 </HBox>
