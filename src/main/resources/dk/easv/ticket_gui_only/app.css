@@ -1,10 +1,14 @@
-/* ===== Global ===== */
+/* =========================
+   Global
+========================= */
 .root {
     -fx-font-family: "System";
     -fx-background-color: #F4F7FB;
 }
 
-/* ===== Login Screen ===== */
+/* =========================
+   Login Screen
+========================= */
 .login-root {
     -fx-background-color: #1F3F8A;
 }
@@ -28,7 +32,6 @@
     -fx-text-fill: #1D2433;
 }
 
-/* Big inputs (ONLY when you add styleClass="login-input" in FXML) */
 .login-input {
     -fx-background-color: white;
     -fx-background-radius: 10;
@@ -43,7 +46,9 @@
     -fx-border-width: 1.5;
 }
 
-/* Buttons */
+/* =========================
+   Buttons
+========================= */
 .primary-button {
     -fx-background-color: #FF7A18;
     -fx-text-fill: white;
@@ -52,7 +57,6 @@
     -fx-padding: 16 18 16 18;
     -fx-cursor: hand;
 }
-
 .primary-button:hover { -fx-background-color: #FF8F3D; }
 .primary-button:pressed { -fx-background-color: #F06908; }
 
@@ -70,33 +74,32 @@
 
 .wide { -fx-max-width: Infinity; }
 
-/* ===== Admin Panel ===== */
-.admin-root, .root {
+/* =========================
+   Admin Panel Layout
+========================= */
+.admin-root {
     -fx-background-color: #F4F7FB;
 }
-/* Align sidebar header with topbar */
+
 .sidebar {
     -fx-background-color: #1F3F8A;
-    -fx-padding: 14 18 18 18; /* was 22 top */
+    -fx-padding: 14 18 18 18;
 }
 
-/* tighten title spacing */
 .sidebar-title {
     -fx-text-fill: white;
     -fx-font-size: 22px;
     -fx-font-weight: 900;
-    -fx-padding: 2 0 18 0;
+    /* your working alignment */
+    -fx-padding: 6 0 -2 0;
 }
 
-
-/* IMPORTANT: style nav buttons ONLY by .nav-button, not ".button.nav-button" */
-
-
-.sidebar .nav-button:hover {
-    -fx-background-color: rgba(255,255,255,0.12);
+.sidebar-footer {
+    -fx-text-fill: rgba(255,255,255,0.85);
+    -fx-font-weight: 800;
 }
-/* Sidebar nav (ToggleButtons) */
-/* Sidebar nav buttons (ToggleButtons) */
+
+/* Sidebar nav buttons */
 .sidebar .toggle-button.nav-button {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
@@ -104,8 +107,6 @@
 
     -fx-border-color: transparent;
     -fx-border-width: 0;
-    -fx-border-insets: 0;
-    -fx-border-radius: 12;
 
     -fx-padding: 10 14 10 14;
     -fx-alignment: CENTER_LEFT;
@@ -115,7 +116,6 @@
     -fx-font-weight: 800;
     -fx-font-size: 14px;
 
-    /* remove the blue focus glow that makes it look “broken” */
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
@@ -124,50 +124,23 @@
     -fx-background-color: rgba(255,255,255,0.12);
 }
 
-.sidebar .toggle-button.nav-button:pressed {
-    -fx-background-color: rgba(255,255,255,0.18);
-}
-
-/* ONLY indicator of active tab */
 .sidebar .toggle-button.nav-button:selected {
     -fx-background-color: #FF7A18;
     -fx-text-fill: white;
 }
 
-
-
-/* Active tab (your FXML uses: "nav-button active") */
-
-
-.sidebar-footer {
-    -fx-text-fill: rgba(255,255,255,0.85);
-    -fx-font-weight: 800;
-}
-
-/* Top bar */
+/* Topbar */
 .topbar {
     -fx-background-color: white;
     -fx-border-color: #E3EAF5;
     -fx-border-width: 0 0 1 0;
-
-    /* match sidebar header height */
     -fx-padding: 14 18 14 18;
     -fx-alignment: center-left;
 }
 
-
 .topbar-title {
     -fx-font-size: 16px;
     -fx-font-weight: 900;
-}
-
-.sidebar-title {
-    -fx-text-fill: white;
-    -fx-font-size: 22px;
-    -fx-font-weight: 900;
-
-    /* align with topbar baseline */
-    -fx-padding: 6 0 -2 0;
 }
 
 .pill {
@@ -177,12 +150,14 @@
     -fx-font-weight: 800;
 }
 
-/* content host */
+/* Content host padding (page margin) */
 .content-host {
     -fx-padding: 28;
 }
 
-/* Pages + Cards */
+/* =========================
+   Pages (Users etc.)
+========================= */
 .page {
     -fx-padding: 10;
     -fx-background-color: #F4F7FB;
@@ -194,67 +169,14 @@
     -fx-text-fill: #1D2433;
 }
 
-
 .page-subtitle {
     -fx-text-fill: #5B677A;
     -fx-font-size: 13px;
 }
 
-.searchbar { -fx-padding: 4 0 8 0; }
-
-.card {
-    -fx-background-color: white;
-    -fx-background-radius: 16;
-    -fx-padding: 18;
-
-    -fx-border-color: #E3EAF5;
-    -fx-border-radius: 16;
-
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 18, 0.18, 0, 6);
-}
-
-
-
-.card-title { -fx-font-size: 16px; -fx-font-weight: 900; }
-.card-subtext { -fx-text-fill: #5B677A; }
 .muted { -fx-text-fill: #5B677A; }
 
-.tag {
-    -fx-background-radius: 999;
-
-    /* padding same visual weight as Figma */
-    -fx-padding: 6 12 6 12;
-
-    -fx-font-weight: 900;
-    -fx-font-size: 12px;
-
-    /* center text inside pill */
-    -fx-alignment: CENTER;
-
-    /* IMPORTANT — remove fixed width behavior */
-    -fx-min-width: USE_PREF_SIZE;
-    -fx-max-width: USE_PREF_SIZE;
-
-    /* prevents weird JavaFX stretching */
-    -fx-background-insets: 0;
-}
-
-
-
-.tag.coordinator { -fx-background-color: #2D6BFF; -fx-text-fill: white; }
-.tag.user { -fx-background-color: #E9EEF6; -fx-text-fill: #1D2433; }
-
-.mini-card {
-    -fx-background-color: #F7FAFF;
-    -fx-background-radius: 12;
-    -fx-padding: 12;
-    -fx-border-color: #E3EAF5;
-    -fx-border-radius: 12;
-}
-
-.searchbar {
-    -fx-padding: 10 0 12 0;
-}
+.searchbar { -fx-padding: 10 0 12 0; }
 
 .search-input {
     -fx-background-color: white;
@@ -270,93 +192,105 @@
     -fx-border-width: 1.5;
 }
 
-/* wrapper for the whole top area (blue left + white right) */
-.topbar-wrap {
-    -fx-background-color: white; /* right side base */
-}
-
-/* left block above the sidebar */
-.topbar-left {
-    -fx-background-color: #1F3F8A;
-    -fx-background-insets: 0;
-}
-
-/* your existing topbar (right side) */
-.topbar {
+/* =========================
+   Cards (User rows)
+========================= */
+.card {
     -fx-background-color: white;
+    -fx-background-radius: 14;
+
     -fx-border-color: #E3EAF5;
-    -fx-border-width: 0 0 1 0;
-    -fx-background-insets: 0;
+    -fx-border-radius: 14;
+
+    -fx-padding: 18 18 18 18;
+
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0.2, 0, 6);
 }
-/* Row layout inside the card */
+
 .user-row {
     -fx-alignment: CENTER_LEFT;
 }
 
-/* Optional: admin tag like figma (red pill) */
-.tag.admin {
-    -fx-background-color: #D11A2A;
-    -fx-text-fill: white;
+.card-title {
+    -fx-text-fill: #1D2433;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
 }
 
-/* smaller action buttons in user rows */
-.action-small {
+.card-subtext {
+    -fx-text-fill: #5B677A;
+}
+
+/* Make action buttons match Figma sizing inside user cards */
+.user-row .primary-button {
+    -fx-padding: 10 18 10 18;
+    -fx-background-radius: 12;
+}
+.user-row .secondary-button {
     -fx-padding: 10 18 10 18;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
 }
 
-/* Scroll area background */
-.users-scroll {
-    -fx-background-color: transparent;
-    -fx-padding: 0;
-    -fx-background: transparent;
-}
-
-/* Remove ugly gray frame */
-.users-scroll > .viewport {
-    -fx-background-color: transparent;
-}
-
-/* Figma thin scrollbar */
-.scroll-bar:vertical {
-    -fx-background-color: transparent;
-    -fx-pref-width: 10;
-}
-
-.scroll-bar:vertical .thumb {
-    -fx-background-color: #C9D3E3;
+/* =========================
+   Tags (Coordinator/User/Admin pills)
+========================= */
+.tag {
     -fx-background-radius: 999;
+    -fx-padding: 6 12 6 12;
+
+    -fx-font-weight: 900;
+    -fx-font-size: 12px;
+
+    -fx-alignment: CENTER;
+
+    /* IMPORTANT: no fixed width */
+    -fx-background-insets: 0;
 }
 
-.scroll-bar:vertical .thumb:hover {
-    -fx-background-color: #AEBBD0;
-}
+.tag.coordinator { -fx-background-color: #2D6BFF; -fx-text-fill: white; }
+.tag.user        { -fx-background-color: #E9EEF6; -fx-text-fill: #1D2433; }
+.tag.admin       { -fx-background-color: #D11A2A; -fx-text-fill: white; }
 
-.scroll-bar .increment-button,
-.scroll-bar .decrement-button {
-    -fx-padding: 0;
-    -fx-opacity: 0;
-}
-/* ===== Users scroll (fix "washed out/broken" colors) ===== */
+/* =========================
+   Users ScrollPane (fix grey/white overlay)
+========================= */
 .users-scroll {
     -fx-background-color: transparent;
-    -fx-background: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
 }
 
 .users-scroll > .viewport {
     -fx-background-color: transparent;
 }
 
-/* optional: make scroll bar look cleaner */
-.users-scroll .scroll-bar:vertical {
-    -fx-background-color: transparent;
-}
-.users-scroll .scroll-bar:vertical .track {
-    -fx-background-color: transparent;
-}
-
+/* VBox inside ScrollPane */
 .users-list {
     -fx-background-color: transparent;
 }
 
+/* Scrollbar (thin like Figma) */
+.users-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+}
+
+.users-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+.users-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #C9D3E3;
+    -fx-background-radius: 999;
+}
+
+.users-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #AEBBD0;
+}
+
+.users-scroll .scroll-bar .increment-button,
+.users-scroll .scroll-bar .decrement-button {
+    -fx-padding: 0;
+    -fx-opacity: 0;
+}

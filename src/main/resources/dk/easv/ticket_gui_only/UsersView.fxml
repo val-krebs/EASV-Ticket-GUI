@@ -15,7 +15,6 @@
       spacing="14"
       styleClass="page">
 
-    <!-- DEBUG (keep for now, remove later) -->
     <Label text="User Management" styleClass="page-title"/>
 
     <Label text="Admins manage users and coordinator access. Admins cannot create events."
@@ -40,7 +39,12 @@
                 </padding>
 
                 <!-- ROW 1 -->
-                <HBox spacing="16" styleClass="card user-row">
+                <HBox spacing="16">
+                    <styleClass>
+                        <String fx:value="card"/>
+                        <String fx:value="user-row"/>
+                    </styleClass>
+
                     <VBox spacing="4">
                         <Label text="Sarah Johnson" styleClass="card-title"/>
                         <Label text="sarah.johnson@easv.dk" styleClass="card-subtext"/>
@@ -56,12 +60,16 @@
                     </Label>
 
                     <Label text="3 events" styleClass="muted" minWidth="80"/>
-
                     <Button text="Remove Coordinator" styleClass="secondary-button"/>
                 </HBox>
 
                 <!-- ROW 2 -->
-                <HBox spacing="16" styleClass="card user-row">
+                <HBox spacing="16">
+                    <styleClass>
+                        <String fx:value="card"/>
+                        <String fx:value="user-row"/>
+                    </styleClass>
+
                     <VBox spacing="4">
                         <Label text="Michael Chen" styleClass="card-title"/>
                         <Label text="michael.chen@easv.dk" styleClass="card-subtext"/>
@@ -77,12 +85,16 @@
                     </Label>
 
                     <Label text="0 events" styleClass="muted" minWidth="80"/>
-
                     <Button text="Assign Coordinator" styleClass="primary-button"/>
                 </HBox>
 
                 <!-- ROW 3 -->
-                <HBox spacing="16" styleClass="card user-row">
+                <HBox spacing="16">
+                    <styleClass>
+                        <String fx:value="card"/>
+                        <String fx:value="user-row"/>
+                    </styleClass>
+
                     <VBox spacing="4">
                         <Label text="Emma Nielsen" styleClass="card-title"/>
                         <Label text="emma.nielsen@easv.dk" styleClass="card-subtext"/>
@@ -98,12 +110,16 @@
                     </Label>
 
                     <Label text="5 events" styleClass="muted" minWidth="80"/>
-
                     <Button text="Remove Coordinator" styleClass="secondary-button"/>
                 </HBox>
 
                 <!-- ROW 4 -->
-                <HBox spacing="16" styleClass="card user-row">
+                <HBox spacing="16">
+                    <styleClass>
+                        <String fx:value="card"/>
+                        <String fx:value="user-row"/>
+                    </styleClass>
+
                     <VBox spacing="4">
                         <Label text="David Schmidt" styleClass="card-title"/>
                         <Label text="david.schmidt@easv.dk" styleClass="card-subtext"/>
@@ -119,12 +135,16 @@
                     </Label>
 
                     <Label text="0 events" styleClass="muted" minWidth="80"/>
-
                     <Button text="Assign Coordinator" styleClass="primary-button"/>
                 </HBox>
 
                 <!-- ROW 5 -->
-                <HBox spacing="16" styleClass="card user-row">
+                <HBox spacing="16">
+                    <styleClass>
+                        <String fx:value="card"/>
+                        <String fx:value="user-row"/>
+                    </styleClass>
+
                     <VBox spacing="4">
                         <Label text="Anna Larsen" styleClass="card-title"/>
                         <Label text="anna.larsen@easv.dk" styleClass="card-subtext"/>
@@ -143,19 +163,27 @@
                     <Label text="No actions" styleClass="muted"/>
                 </HBox>
 
-                <!-- EXTRA rows so you can see the scrollbar clearly (optional) -->
-                <HBox spacing="16" styleClass="card user-row">
+                <!-- ROW 6 -->
+                <HBox spacing="16">
+                    <styleClass>
+                        <String fx:value="card"/>
+                        <String fx:value="user-row"/>
+                    </styleClass>
+
                     <VBox spacing="4">
                         <Label text="Thomas Andersen" styleClass="card-title"/>
                         <Label text="thomas.andersen@easv.dk" styleClass="card-subtext"/>
                     </VBox>
+
                     <Region HBox.hgrow="ALWAYS"/>
+
                     <Label text="User">
                         <styleClass>
                             <String fx:value="tag"/>
                             <String fx:value="user"/>
                         </styleClass>
                     </Label>
+
                     <Label text="0 events" styleClass="muted" minWidth="80"/>
                     <Button text="Assign Coordinator" styleClass="primary-button"/>
                 </HBox>
